@@ -1,0 +1,282 @@
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//                                                                      𝒕𝒓𝒂𝒃𝒂𝒍𝒉𝒐 𝒅𝒆 𝒑𝒓𝒐𝒈𝒓𝒂𝒎𝒂𝒄𝒂𝒐
+//                                                                              𝒆𝒕𝒂𝒑𝒂 3
+//                                                                     𝒑𝒓𝒐𝒇𝒆𝒔𝒔𝒐𝒓𝒂: 𝒕𝒂𝒕𝒊𝒂𝒏𝒂 𝒂𝒛𝒆𝒗𝒆𝒅𝒐
+//                                                                  𝒄𝒖𝒓𝒔𝒐: 𝒆𝒏𝒈𝒆𝒏𝒉𝒂𝒓𝒊𝒂 𝒅𝒂 𝒄𝒐𝒎𝒑𝒖𝒕𝒂𝒄𝒂𝒐
+//                                                                           1° 𝒑𝒆𝒓𝒊𝒐𝒅𝒐
+//
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//                                                                           𝒑𝒂𝒓𝒕𝒊𝒄𝒊𝒑𝒂𝒏𝒕𝒆𝒔:
+//                                                                          -𝒌𝒂𝒖𝒆𝒕 𝒃𝒐𝒇𝒇𝒐
+//                                                                          -𝒍𝒖𝒊𝒔 𝒇𝒆𝒍𝒊𝒑𝒆
+//                                                                          -𝒉𝒊𝒂𝒓𝒂 𝒇𝒂𝒖𝒔𝒕𝒊𝒏𝒐
+//                                                                          -𝒄𝒆𝒄𝒊𝒍𝒊𝒂 𝒂𝒍𝒗𝒆𝒔
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+//                                                                   𝒑𝒓𝒐𝒈𝒓𝒂𝒎𝒂 𝒑𝒂𝒓𝒂 𝒆𝒔𝒕𝒐𝒒𝒖𝒆 𝒅𝒆 𝒎𝒆𝒓𝒄𝒂𝒅𝒐
+
+
+//--------------------------------------------------------------------------* Variaveis *---------------------------------------------------------------------
+
+#include <stdio.h>
+#include <locale.h>
+#include <stdlib.h>
+
+   float calcular_preco(float preco_de_custo, float porcentagem)
+   {
+   float resultado;
+   float calculo_porcentagem;
+   calculo_porcentagem=preco_de_custo*porcentagem/100;
+   resultado=preco_de_custo+calculo_porcentagem;
+   return resultado;
+   }
+
+//-----------------------------------------------------------------Calcular o valor de venda do produto ------------------------------------------------------
+
+   int menu_sim_e_nao(int op2)
+   {
+   printf ("\n 1 - Sim \n");
+   printf ("\n 2 - Não \n");
+   scanf (op2 = 0);
+   return op2;
+   }
+
+//-----------------------------------------------------------------Salvar a opção que o usuario escolheu------------------------------------------------------
+
+
+
+
+
+  int main()
+  {
+
+
+
+
+
+  setlocale(LC_ALL, "Portuguese");
+
+
+    float save;
+    int codigo [2];
+    char descricao_do_produto [50][2];
+    float preco_de_custo [2];
+    float preco_de_venda [2];
+    int quantidade [2];
+    char fornecedor [50][2];
+    float lucro [2];
+    int codigo_da_nf [2];
+    char marca [50][2];
+    char origem [50][2];
+    char data_de_compra[50][2];
+    char data_de_venda [50][2];
+
+//-------------------------------------Acima temos as variaveis para Salvar as configurações de um produto,preço,fornecedor,quantidade,etc...--------------------
+
+
+    float porcentagem;
+    int validar;
+    float validar_real;
+    float validar_preco;
+//-----------------------------------------------------------------------Para calcular o preço de venda-------------------------------------------------------------------------------
+    int op;
+    int vetor = 0;
+    char pesquisa[50];
+    int i;
+    int resposta;
+    int op2;
+//-----------------------------------------------------------------------Guardar a opção que o usuario escolheu -----------------------------------------------------------------------
+
+
+    do
+    {
+    printf("\n\t\t ============================================= \n");
+    printf("\n\t\t\t\t  Bem Vindo \n");
+    printf("\n\t\t ============================================= \n");
+    printf("\n Selecione uma opcao: \n");
+    printf("\n 1 - Cadastrar produto \n");
+    printf("\n 2 - Ver produtos cadastrados \n");
+    printf("\n 3 - Finalizar \n ");
+    scanf ("%d", & op);
+
+//---------------------------------------------------------------------Acima temos a Tela de inicio do programa-----------------------------------------------------------
+
+//--------------------------------------------------------------------* SE O USUARIO ESCOLHER A OPÇÃO 1 (CADASTRO DE PRODUTO) -----------------------------------------------------
+
+
+
+    if (op==1)
+    {
+    while (resposta != 2)
+    {
+
+         system("cls");
+
+      printf ("\n Descricao do produto: ");
+      fflush(stdin);
+      gets(descricao_do_produto[vetor]);
+      printf ("%s\n",  descricao_do_produto[vetor]);
+      printf ("\n Informe a marca do produto: ");
+      fflush(stdin);
+      gets(marca[vetor]);
+      printf ("%s\n",  marca[vetor]);
+      printf ("\n Informe a origem do produto: ");
+      fflush(stdin);
+      gets(origem[vetor]);
+      printf ("%s\n",  origem[vetor]);
+      printf ("\n Informe o fornecedor do produto: ");
+      fflush(stdin);
+      gets(fornecedor[vetor]);
+      printf ("%s\n",  fornecedor[vetor]);
+      printf ("\n Informe a data de compra: ");
+      fflush(stdin);
+      gets(data_de_compra[vetor]);
+      printf ("%s\n",  data_de_compra[vetor]);
+      printf ("\n Informe o codigo da nota fiscal: ");
+      scanf ("%d", & codigo_da_nf[vetor]);
+      printf ("%d\n",  codigo_da_nf[vetor]);
+      printf ("\n Informe a quantidade de produtos:");
+      scanf ("%d", & quantidade[vetor]);
+      printf ("%d\n",  quantidade[vetor]);
+
+      do
+      {
+      printf ("\n Informe o preco de custo do produto:");
+      scanf ("%f",  & preco_de_custo[vetor]);
+      printf ("%f\n",  preco_de_custo[vetor]);
+      printf ("\n Informe a porcentagem de lucro do produto:");
+      scanf ("%f",  & porcentagem);
+      validar_preco=calcular_preco(preco_de_custo[vetor], porcentagem);
+      system("cls");
+      printf("\n\n O preco de venda definido foi: %.2f \n", validar_preco);
+      printf("\n Deseja salvar como preco de venda? \n");
+      printf("\n 1- Sim 2-Nao\n");
+      scanf("%f",&save);
+      resposta=menu_sim_e_nao;
+        if (resposta==1)
+        {
+         preco_de_venda[vetor]=validar_preco;
+        }
+       }
+      while(resposta!=2);
+      if (vetor == 0)
+      {
+        codigo[vetor]=1;
+      }
+      else
+      {
+        codigo[vetor]=+1;
+      }
+
+      printf ("o seguinte produto foi cadastrado: %s\n", descricao_do_produto[vetor]);
+
+      if (vetor<2)
+      {
+      printf ("\n\n deseja cadastrar outro produto?");
+      resposta=menu_sim_e_nao;
+      vetor=vetor+1;
+      }
+      else
+      {
+      resposta=2;
+      printf ( "\n\n limite de produtos atingido.");
+      }
+    }
+
+    }
+
+//-------------------------------------------------------Essa parte acima foi inteira dedicada para o Usuario poder cadastrar todos os dados do produto ------------------------------------
+
+// -----------------------------------------------------* SE O USUARIO ESCOLHER A OPÇÃO 2 (VER PRODUTOS CADASTRADOS) * ----------------------------------------------------------------------
+
+     else if(op==2)
+    {
+        op2=0;
+        if (codigo[vetor]==0)
+        {
+            printf("nao ha nenhum produto cadastrado.");
+        }
+
+        else
+        {
+         do
+         {
+         printf ("\n Escolha uma opcao: \n");
+         printf ("\n 1- Pesquisar produto expecifico \n");
+         printf ("\n 2- Mostrar todos os produtos cadastrados \n");
+         scanf ("%d", & op2);
+
+         if (op2==1)
+         {
+         printf ("\n Informe a descrição do produto:");
+         fflush(stdin);
+         gets(pesquisa);
+         for (i=0;i<=vetor;i++)
+         if (strcmp(descricao_do_produto[i], pesquisa) == 0)
+        {
+               printf ("\n\n codigo: %d\n",codigo[i]);
+               printf ("\n\n descricao: %s\n",descricao_do_produto[i]);
+               printf ("\n\n marca: %s\n",marca[i]);
+               printf ("\n\n fornecedor: %s\n",fornecedor[i]);
+               printf ("\n\n origem: %s\n",origem[i]);
+               printf ("\n\n codigo da nota fiscal: %d\n",codigo_da_nf[i]);
+               printf ("\n\n data de compra: %s\n",data_de_compra[i]);
+               printf ("\n\n preço de custo: %f\n",preco_de_custo[i]);
+               printf ("\n\n preço de venda: %f\n",preco_de_venda[i]);
+
+         }
+         else if (i==vetor && descricao_do_produto[i]!=pesquisa)
+         {
+         printf ("produto nao encontrado");
+         }
+
+         }
+
+        else if (op2==2)
+        {
+
+
+
+        for (i=0;i <= vetor; i++)
+        {
+                system("cls");
+                printf ("\n\n codigo: %d\n",codigo[i]);
+                printf ("\n\n descricao: %s\n",descricao_do_produto[i]);
+                printf ("\n\n marca: %s\n",marca[i]);
+                printf ("\n\n fornecedor: %s\n",fornecedor[i]);
+                printf ("\n\n origem: %s\n",origem[i]);
+                printf ("\n\n codigo da nota fiscal: %d\n",codigo_da_nf[i]);
+                printf ("\n\n data de compra: %s\n",data_de_compra[i]);
+                printf ("\n\n preço de custo: %f\n",preco_de_custo[i]);
+                printf ("\n\n preço de venda: %f\n",preco_de_venda[i]);
+                printf ("\n\n");
+                system ("pause");
+
+        }
+        }
+// -------------------------------------------------------* A parte a cima foi dedicada para o usuario ver todos os produtos que foram cadastrados no sistema ----------------------------
+//------------------------------------------------* ele tem tanto a opção de busca pelo codigo do produto como também pode ver a lista de todos os produtos cadastrados ----------
+        else
+        {
+             printf ("opcao invalida");
+        }
+
+//-------------------------------------------------------* A parte acima é caso o usuario escolha qualquer opção que não esteja cadastrada no sistema-------------------------------------
+
+        }
+        while((op2!= 1) && (op2!=2));
+
+    }
+
+    }}while(op!=3);
+  }
+
